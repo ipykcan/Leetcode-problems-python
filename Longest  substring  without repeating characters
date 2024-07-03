@@ -1,0 +1,15 @@
+class Solution:
+    def lenghtofthelongestsubstring(self,s):
+        result=0
+        for s_length in range(len(s)):
+            s_list=[]
+            count=0
+            for s_check in range(s_length,len(s)):
+                if s[s_check] not in s_list:
+                    s_list.append(s[s_check])
+
+                    count+=1
+                    result=max(result,count)
+                else:
+                    break
+        return result
